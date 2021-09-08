@@ -1,6 +1,7 @@
 /* start variables */
 :root {
     --main-color: #10cab7;
+    --secondary-color: #2c4755;
 }
 /* end variables */
 
@@ -40,6 +41,30 @@ body {
     }
 }
 /* end globale rules */
+/* start components */
+.special-heading{
+    color:#ebeced;
+    font-size:  100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing:  -3px;
+    margin: 0;
+}
+.special-heading + p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color:#797979;
+}
+@media (max-width: 767px) {
+    .special-heading{
+        font-size:  60px;
+    }
+    .special-heading + p {
+        margin: -20px 0 0;
+    }
+}
+/* end components */
 /*start Header */ 
     .header{
         padding:20px;
@@ -91,13 +116,14 @@ body {
         display: none;
         z-index: 1;
     }
-    .header .links ul::before{
-        content: "";
-        border-width: 10px;
-        border-style: solid;
-        border-color: transparent transparent #f6f6f6 transparent;
-        right: 5px;
-        top: -20px;
+   .header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
     }
     .header .links:hover ul {
         display: block;
@@ -171,4 +197,65 @@ body {
     font-size: 17px;
 }
 /* end featrures */
+/* start servcess */
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+.services .services-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+    .services .services-content .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .services-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .services-content .srv .text {
+ flex: 1;
+}
+.services .services-content .srv h3 {
+    margin: 0 0 20px;
+}
+.services .services-content .srv p {
+    color: #777;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .services-content .image {
+    text-align: center;
+    position: absolute;
+}
+.services .services-content .image::before{
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: -50px;
+    z-index: -1;
+
+}
+.services .services-content .image img{
+    width: 260px;
+}
+@media(max-width: 1199px){
+    .image-hidden {
+        display: none;
+    }
+}
+/* end servcess */
+
 

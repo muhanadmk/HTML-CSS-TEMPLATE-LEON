@@ -5,6 +5,7 @@
     --color-paragraph-light-light: #777;
     --section-padding: 60px;
     --section-background-color: #f6f6f6;
+    --main-duration: 0.3s;
 }
 /* end variables */
 
@@ -12,6 +13,9 @@
 
 *{
     box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
 }
 body {
     font-family: "work sans", sans-serif;
@@ -102,7 +106,7 @@ body {
     }
     .header .links .icon span:nth-child(2){
         width: 60%;
-        transition: 0.3s;
+        transition:var(--main-duration);
     }
     .header .links .icon span:last-child{
         width: 100%;
@@ -136,7 +140,7 @@ body {
         padding: 15px;
         text-decoration: none;
         color: #333;
-        transition: 0.3s;
+        transition: var(--main-duration);
     }
     .header .links ul li a:hover{
         padding-left: 25px;

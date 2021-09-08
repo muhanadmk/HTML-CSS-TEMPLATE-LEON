@@ -2,7 +2,7 @@
 :root {
     --main-color: #10cab7;
     --secondary-color: #2c4755;
-    --color-paragraph: #777;
+    --color-paragraph-light-light: #777;
     --section-padding: 60px;
     --section-background-color: #f6f6f6;
 }
@@ -196,7 +196,7 @@ body {
 }
 .featrures .feat p{
     line-height: 1.8;
-    color: var( --color-paragraph);
+    color: var(--color-paragraph-light);
     font-size: 17px;
 }
 /* end featrures */
@@ -232,7 +232,7 @@ body {
     margin: 0 0 20px;
 }
 .services .services-content .srv p {
-    color: var( --color-paragraph);
+    color: var(--color-paragraph-light);
     font-weight: 300;
     line-height: 1.6;
 }
@@ -282,7 +282,7 @@ body {
    padding: 20px;
 }
 .Portfolio .Portfolio-content .card .info p {
-    color: var( --color-paragraph);
+    color: var(--color-paragraph-light);
     line-height: 1.6;
     margin-bottom: 0;
 }
@@ -296,6 +296,84 @@ body {
     }
 }
 /*end Portfolio */
+/* start About */
+.About {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + 60px);
+}
+.About-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.About-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+@media(max-width:991px){
+    .About-content {
+       flex-direction: column; 
+       text-align: center;
+    }
+}
+
+.About-content .image::before{
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.About-content .image::after{
+    content: "";
+    top: -40px;
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+}
+@media(max-width:991px){
+    .About-content .image::before,
+     .About-content .image::after{
+         display: none;
+     }
+}
+@media(max-width:991px){
+    .About .About-content .image{
+        margin: 0 auto 80px;
+    }
+}
+.About .About-content .image img {
+    max-width: 100%;
+}
+.About .About-content .text{
+    flex-basis: calc(100% - 500px);
+}
+.About .About-content .text p:first-of-type{
+font-weight: bold;
+line-height: 2;
+margin-bottom: 50px;
+}
+.About .About-content .text hr{
+width: 50%;
+display: inline-block;
+border-color: var(--main-color);
+
+}
+.About .About-content .text p:last-of-type{
+    line-height: 2;
+    color: var(--color-paragraph-light);
+}
+/* end About */
+
 
 
 
